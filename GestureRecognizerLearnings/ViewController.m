@@ -58,12 +58,20 @@
 }
 
 - (IBAction)handlePinch:(UIPinchGestureRecognizer *)recognizer {
+    
+    //Use the current transform, each time this method is called. Scale it to the amount the user has scaled the UIView. the user scales the view by pinching in or out. The amount 'in' or 'out' is represented by the UIPinchGestureRecognizer's scale property.
+    //We create this transform using the CGAffineTransformScale function, that is a part of the Quartz2D programming framework.
     recognizer.view.transform = CGAffineTransformScale(recognizer.view.transform, recognizer.scale, recognizer.scale);
+    
+    //Once we have set the current view's transform, we reset the scale to 1. This is because the scale is a multiplier and resetting it to 0, will cause the view to disappear, because in the previous line, we are setting the current transform to the previous transform, scaled along the x and u values by a factor of recognizer.scale, which is a multiplier in internal calcs. This will cause the transform to be set to 0 along the x and y axes which will cause the view to disappear.
     recognizer.scale = 1;
 }
 
 - (IBAction)handleRotate:(UIRotationGestureRecognizer *)recognizer {
+    
+    //Use the current transform, each time this method is called. Rotate the transform by the amount the user has rotated, which is returned in recognizer.rotation - this is the angle by which the user has rotated the view.
     recognizer.view.transform = CGAffineTransformRotate(recognizer.view.transform, recognizer.rotation);
+    //Reset recognizer.rotation to 0, since recognizer.rotation is a value of the angle by which to rotate.
     recognizer.rotation = 0;
 }
 
