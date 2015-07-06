@@ -18,6 +18,10 @@
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banana.png" translatesAutoresizingMaskIntoConstraints="NO" id="jr8-vb-4wW">
                                 <rect key="frame" x="101" y="243" width="175" height="175"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="m39-O4-tMd" appends="YES" id="BLv-hj-3DN"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="monkey.png" translatesAutoresizingMaskIntoConstraints="NO" id="wiY-9i-olY">
                                 <rect key="frame" x="16" y="131" width="168" height="168"/>
@@ -34,6 +38,11 @@
                 <panGestureRecognizer minimumNumberOfTouches="1" id="6xX-ae-K6f">
                     <connections>
                         <action selector="handlePan:" destination="vXZ-lx-hvc" id="kX6-qY-LPG"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="m39-O4-tMd">
+                    <connections>
+                        <action selector="handlePan:" destination="vXZ-lx-hvc" id="gcX-Ze-1Tf"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
