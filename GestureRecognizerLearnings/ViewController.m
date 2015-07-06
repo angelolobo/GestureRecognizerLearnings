@@ -7,21 +7,55 @@
 //
 
 #import "ViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
-@interface ViewController ()
+@interface ViewController () <UIGestureRecognizerDelegate>
+
+@property (strong) AVAudioPlayer *chompPlayer;
 
 @end
 
 @implementation ViewController
 
+@synthesize chompPlayer;
+
+-(AVAudioPlayer *)loadWav:(NSString *)filename{
+    NSURL *url = [[NSBundle mainBundle] URLForResource:filename withExtension:@"wav"];
+    
+    NSError *err;
+    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&err];
+    if (!player) {
+        NSLog(@"unable to load player; error = %@", err.localizedDescription);
+    }
+    else{
+        [player prepareToPlay];
+    }
+    return player;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    for (UIView *view in self.view.subviews) {
+        UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+        tapGR.delegate = self;
+        
+        [view addGestureRecognizer:tapGR];
+    }
+    
+    chompPlayer = [self loadWav:@"chomp"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)handleTap:(UITapGestureRecognizer *)recognizer{
+    NSLog(@"Tapped");
+    
+    [chompPlayer play];
 }
 
 - (IBAction)handlePan:(UIPanGestureRecognizer *)recognizer {

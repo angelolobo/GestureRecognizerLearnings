@@ -20,6 +20,7 @@
 		65C8CDE71B414E24009A1B6B /* hehehe1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 65C8CDE11B414E24009A1B6B /* hehehe1.caf */; };
 		65C8CDE81B414E24009A1B6B /* monkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 65C8CDE21B414E24009A1B6B /* monkey.png */; };
 		65C8CDE91B414E24009A1B6B /* monkey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65C8CDE31B414E24009A1B6B /* monkey@2x.png */; };
+		65D4214D1B4A55BB0082A86E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D4214C1B4A55BB0082A86E /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		65C8CDE11B414E24009A1B6B /* hehehe1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hehehe1.caf; sourceTree = "<group>"; };
 		65C8CDE21B414E24009A1B6B /* monkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkey.png; sourceTree = "<group>"; };
 		65C8CDE31B414E24009A1B6B /* monkey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monkey@2x.png"; sourceTree = "<group>"; };
+		65D4214C1B4A55BB0082A86E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65D4214D1B4A55BB0082A86E /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +78,7 @@
 		65C8CDAC1B414DBD009A1B6B = {
 			isa = PBXGroup;
 			children = (
+				65D4214C1B4A55BB0082A86E /* AVFoundation.framework */,
 				65C8CDEA1B414E2C009A1B6B /* Resources */,
 				65C8CDB71B414DBD009A1B6B /* GestureRecognizerLearnings */,
 				65C8CDD11B414DBD009A1B6B /* GestureRecognizerLearningsTests */,
@@ -448,6 +452,7 @@
 				65C8CDDA1B414DBD009A1B6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65C8CDDB1B414DBD009A1B6B /* Build configuration list for PBXNativeTarget "GestureRecognizerLearningsTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +461,7 @@
 				65C8CDDD1B414DBD009A1B6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
