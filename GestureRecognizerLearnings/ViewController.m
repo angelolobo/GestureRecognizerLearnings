@@ -57,4 +57,14 @@
     }
 }
 
+- (IBAction)handlePinch:(UIPinchGestureRecognizer *)recognizer {
+    recognizer.view.transform = CGAffineTransformScale(recognizer.view.transform, recognizer.scale, recognizer.scale);
+    recognizer.scale = 1;
+}
+
+- (IBAction)handleRotate:(UIRotationGestureRecognizer *)recognizer {
+    recognizer.view.transform = CGAffineTransformRotate(recognizer.view.transform, recognizer.rotation);
+    recognizer.rotation = 0;
+}
+
 @end
